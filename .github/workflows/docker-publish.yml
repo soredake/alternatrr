@@ -34,7 +34,7 @@ jobs:
     
     - name: Build the Docker image
       if: github.event_name != 'pull_request'
-      run: docker build . --file Dockerfile -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:$(date +%s) -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:latest -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:${{ env.BRANCH }} --label "org.opencontainers.image.source=https://github.com/TheUltimateC0der/alternatrr" --label "org.opencontainers.image.description=alternatrr lets you add alternative titles to your sonarr instance by editing the sonarr.db file directly via a simple UI." --label "org.opencontainers.image.licenses=AGPL3"
+      run: docker build . --file Dockerfile -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:$(date +%s) -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:latest -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}:${{ env.BRANCH }} --label "org.opencontainers.image.source=https://github.com/soredake/alternatrr" --label "org.opencontainers.image.description=alternatrr lets you add alternative titles to your sonarr instance by editing the sonarr.db file directly via a simple UI." --label "org.opencontainers.image.licenses=AGPL3"
       
     - name: Docker Login
       if: github.event_name != 'pull_request'
